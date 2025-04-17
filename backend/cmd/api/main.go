@@ -30,6 +30,7 @@ func main() {
 	// Routes
 	e.POST("/signup", handlers.Signup)
 	e.POST("/login", handlers.Login)
+	e.POST("/webhook/cloud-mailin", handlers.HandleCloudMailin)
 
 	// Protected routes
 	api := e.Group("/api")
