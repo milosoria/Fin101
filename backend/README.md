@@ -8,19 +8,14 @@ A Go backend application for managing user transactions with JWT authentication.
 - JWT-based authentication
 - Transaction management
 - User email management
-- PostgreSQL database integration
+- SQLite database integration
 
 ## Prerequisites
 
 - Go 1.16 or higher
-- PostgreSQL database
 - Make sure you have the following environment variables set in your `.env` file:
   ```
-  DB_HOST=localhost
-  DB_USER=postgres
-  DB_PASSWORD=postgres
-  DB_NAME=fin101
-  DB_PORT=5432
+  DB_PATH=fin101.db  # Optional, defaults to fin101.db in the current directory
   JWT_SECRET=your-secret-key-here
   ```
 
@@ -31,9 +26,8 @@ A Go backend application for managing user transactions with JWT authentication.
    ```bash
    go mod download
    ```
-3. Create a PostgreSQL database named `fin101`
-4. Update the `.env` file with your database credentials
-5. Run the application:
+3. Update the `.env` file with your configuration
+4. Run the application:
    ```bash
    go run cmd/api/main.go
    ```
